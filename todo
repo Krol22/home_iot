@@ -1,0 +1,18 @@
+#LED
+
+=== TODO ===
+
+# now
+
+[x] - figure out firebase + esp8266,
+[x] - platformio setup,
+[x] - build same code for different LED stripes,
+[x] - setup basic abstraction/inheritance,
+[x] - setup make commands (f.e. make desk, make monitor)
+[x] - read JSON data from firebase,
+[x] - first animation - (static),
+[] - remove critical variables from code -> wifi and firebase static.
+
+# later
+
+[] - serial.print for debbuging,
