@@ -11,8 +11,8 @@
 [x] - setup make commands (f.e. make desk, make monitor)
 [x] - read JSON data from firebase,
 [x] - first animation - (static),
-[] - remove critical variables from code -> wifi and firebase static.
+[x] - remove critical variables from code -> wifi and firebase static.
 
 # later
 
-[] - serial.print for debbuging,
+[] - serial.print for debbuging without ArduinoIDE
