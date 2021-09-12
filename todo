@@ -2,9 +2,27 @@
 
 === TODO ===
 
-# v0.2 - "Animations and mobile app look" - IN_PROGRESS
+# v0.2 - "First animation and mobile app improvements" - IN_PROGRESS
 
-[] - prepare todo xD,
+== led/device ==
+
+[] - multicolor animation,
+[] - build test device,
+
+== mobile app ==
+
+[] - add some led icons,
+[] - create 2columns grid for devices,
+[] - separate devices into rooms,
+[] - darkmode fix,
+[] - change on/off button to switch,
+[] - research how to make widget,
+[] - connect listener,
+[] - add pull to refresh,
+
+== other ==
+
+[x] - prepare todo xD,
 
 === DONE ===
 
