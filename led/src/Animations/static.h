@@ -16,7 +16,7 @@ public:
 private:
   Adafruit_NeoPixel strip;
   int brightness;
-  int red, green, blue;
+  int red, green, blue, white;
   uint32_t currentColor;
 };
 

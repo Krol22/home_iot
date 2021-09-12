@@ -4,7 +4,11 @@
 
 #define LED_PIN 12
 
-Adafruit_NeoPixel strip = Adafruit_NeoPixel(202, 12, NEO_GRB + NEO_KHZ800);
+#ifdef GRBW
+  Adafruit_NeoPixel strip = Adafruit_NeoPixel(202, 12, NEO_GRBW + NEO_KHZ800);
+#else
+  Adafruit_NeoPixel strip = Adafruit_NeoPixel(202, 12, NEO_GRB + NEO_KHZ800);
+#endif
 
 Led::Led() {
   strip.begin();

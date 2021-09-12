@@ -3,3 +3,6 @@ desk:
 
 monitor:
 	pio run -e monitor -t upload
+
+living_room_cabinet:
+	pio run -e living_room_cabinet -t upload
