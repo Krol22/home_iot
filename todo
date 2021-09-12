@@ -2,7 +2,13 @@
 
 === TODO ===
 
-# now
+# v0.2 - "Animations and mobile app look" - IN_PROGRESS
+
+[] - prepare todo xD,
+
+=== DONE ===
+
+# v0.1 - "Basic mvp" DONE
 
 [x] - figure out firebase + esp8266,
 [x] - platformio setup,
@@ -12,7 +18,4 @@
 [x] - read JSON data from firebase,
 [x] - first animation - (static),
 [x] - remove critical variables from code -> wifi and firebase static.
-
-# later
-
-[] - serial.print for debbuging without ArduinoIDE
+[x] - mobile app for controlling led panels (turn on/off, hue, saturation and brightness),
