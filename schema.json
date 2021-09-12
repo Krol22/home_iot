@@ -1,0 +1,75 @@
+{
+  "animations" : {
+    "led" : {
+      "audio" : {
+        "name" : "audio"
+      },
+      "fire" : {
+        "name" : "fire"
+      },
+      "glow" : {
+        "name" : "glow"
+      },
+      "multicolor" : {
+        "name" : "multicolor"
+      },
+      "static" : {
+        "name" : "static"
+      }
+    }
+  },
+  "devices" : {
+    "desk" : {
+      "animation" : {
+        "brightness" : 100,
+        "color" : {
+          "b" : 143,
+          "g" : 0,
+          "r" : 255
+        },
+        "name" : "static"
+      },
+      "current_animation" : "static",
+      "display" : "Biurko",
+      "name" : "desk",
+      "on" : 1
+    },
+    "living_room_cabinet" : {
+      "animation" : {
+        "brightness" : 175,
+        "color" : {
+          "b" : 133,
+          "g" : 255,
+          "r" : 137
+        },
+        "name" : "static"
+      },
+      "current_animation" : "static",
+      "display" : "Salon",
+      "name" : "living_room_cabinet",
+      "on" : 0,
+      "type" : "led"
+    },
+    "monitor" : {
+      "animation" : {
+        "brightness" : 100,
+        "color" : {
+          "b" : 0,
+          "g" : 75,
+          "r" : 255
+        },
+        "name" : "static"
+      },
+      "current_animation" : "static",
+      "display" : "Monitor",
+      "name" : "monitor",
+      "on" : 1,
+      "type" : "led"
+    }
+  },
+  "rooms" : {
+    "office" : {
+      "devices" : [ null, "desk", "monitor" ]
+    }
+  }
+}
