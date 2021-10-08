@@ -1,9 +1,8 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import { Flex, Box, Heading, HStack, Switch } from 'native-base';
+import { Flex, Heading, HStack, Switch } from 'native-base';
 import throttle from 'lodash.throttle';
-import { useColorScheme, View, ScrollView } from 'react-native';
+import { View } from 'react-native';
 import { NativeBaseProvider } from "native-base";
-import { Colors } from 'react-native/Libraries/NewAppScreen';
 import { ColorPicker, toHsv } from 'react-native-color-picker';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -35,7 +34,6 @@ function HSVtoRGB(h, s, v) {
 }
 
 export default function Device({ deviceName }) {
-  const isDarkMode = useColorScheme() === 'dark';
   const dispatch = useDispatch();
 
   const device = useSelector((state) => {
@@ -49,7 +47,6 @@ export default function Device({ deviceName }) {
   const [val, setVal] = useState(v);
 
   const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
     flex: 1,
   };
 

@@ -1,5 +1,6 @@
 #include <Adafruit_NeoPixel.h>
 #include "Animations/static.h"
+#include "Animations/multicolor.h"
 #include "led.h"
 
 #define LED_PIN 12
@@ -13,7 +14,7 @@
 Led::Led() {
   strip.begin();
   strip.setBrightness(125);
-  currentAnimation = new Static();
+  currentAnimation = new Multicolor();
   currentAnimationName = "";
 };
 
@@ -35,7 +36,7 @@ void Led::loadData(FirebaseJson* data) {
 
   String newAnimation = result.to<String>();
   if (newAnimation != currentAnimationName) {
-    currentAnimation = new Static();
+    currentAnimation = new Multicolor();
     currentAnimationName = newAnimation;
   }
 

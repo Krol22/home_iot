@@ -2,7 +2,9 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getDatabase, ref, child, get, update } from "firebase/database";
 
 const initialState = {
+  isLoading: false,
   devices: [],
+  rooms: [],
 };
 
 export const deviceSlice = createSlice({
@@ -11,6 +13,9 @@ export const deviceSlice = createSlice({
   reducers: {
     setDevices: (state, { payload }) => {
       state.devices = payload;
+    },
+    setRooms: (state, { payload }) => {
+      state.rooms = payload;
     },
     setDeviceOn: (state, { payload }) => {
       const { deviceName, status } = payload;
@@ -24,18 +29,24 @@ export const deviceSlice = createSlice({
       const device = state.devices.find(({ name }) => name === deviceName);
       device.animation.color = color;
     },
+    setLoading: (state, { payload }) => {
+      state.isLoading = payload;
+    },
   },
 });
 
 export const {
   setDevices,
+  setRooms,
   setDeviceOn,
   setDeviceColor,
+  setLoading,
 } = deviceSlice.actions;
 
-export const getAllDevices = createAsyncThunk(
+export const getDevices = createAsyncThunk(
   "devices/getAllDevices",
   async (_, { dispatch }) => {
+    dispatch(setLoading(true));
     const dbRef = ref(getDatabase());
     const snapshot = await get(child(dbRef, `devices`));
 
@@ -44,6 +55,16 @@ export const getAllDevices = createAsyncThunk(
         setDevices(Object.values(snapshot.val())),
       );
     }
+
+    const roomSnapshot = await get(child(dbRef, 'rooms'));
+
+    if (roomSnapshot.exists()) {
+      dispatch(
+        setRooms(Object.values(roomSnapshot.val())),
+      );
+    }
+
+    dispatch(setLoading(false));
   },
 );
 

@@ -2,27 +2,48 @@
 
 === TODO ===
 
+== Issues ==
+
+[] - devices keeps restarting,
+[x] - living_room_cabinet fell off,
+[] - mobile app getting disable after some time,
+
 # v0.2 - "First animation and mobile app improvements" - IN_PROGRESS
+
+multicolor animation: TLDR: same as in my steel series headphones,
 
 == led/device ==
 
 [] - multicolor animation,
-[] - build test device,
+[x] - smaller delay, (monitor [x], desk [x], living_room_cabinet []),
+[x] - build test device,
 
 == mobile app ==
 
+[] - change animation
+  [] - select animation,
+  [] - create view for multicolor animation,
+[] - icon and name,
+[] - refactor,
 [] - add some led icons,
-[] - create 2columns grid for devices,
-[] - separate devices into rooms,
-[] - darkmode fix,
-[] - change on/off button to switch,
 [] - research how to make widget,
-[] - connect listener,
 [] - add pull to refresh,
+[] - render 'other' devices,
+[x] - create 2columns grid for devices,
+[x] - separate devices into rooms,
+[x] - turn on office,
+[x] - change on/off button to switch,
+[x] - darkmode fix,
+[-] - connect listener - AFAIK: need to rewrite to cloud firestore,
 
 == other ==
 
 [x] - prepare todo xD,
+
+=== FUTURE IDEAS ===
+
+[] - dark mode for mobile application,
+[] - Alexa with: "Office on" command,
 
 === DONE ===
 

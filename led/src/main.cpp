@@ -47,30 +47,40 @@ void setup()
 
 int on;
 char* dataOutput;
+int frame = 0;
+int direction = 1;
 
 void loop() {
-    if (millis() - dataMillis > 5000) {
-        dataMillis = millis();
-        std::string device_name = "/devices/";
-        device_name += FIREBASE_NAME;
+    if (millis() - dataMillis > 500) {
+        // dataMillis = millis();
+        // std::string device_name = "/devices/";
+        // device_name += FIREBASE_NAME;
 
-        FirebaseJson data;
+        // FirebaseJson data;
 
-        Firebase.getJSON(fbdo, device_name);
-        data = fbdo.to<FirebaseJson>();
-        led->loadData(&data);
-
-        device_name += "/on";
-
-        Firebase.getInt(fbdo, device_name, &on);
-
-        if (on) {
-            Serial.print("on");
-            led->update(0);
-        } else {
-            Serial.print("off");
-            led->off();
-        }
+        // Firebase.getJSON(fbdo, device_name);
+        // data = fbdo.to<FirebaseJson>();
+        // led->loadData(&data);
+//
+        // device_name += "/on";
+//
+        // Firebase.getInt(fbdo, device_name, &on);
     }
 
+
+    if (millis() - dataMillis > 20) {
+        // if (on) {
+            Serial.print("on");
+            led->update(frame);
+        // } else {
+            // Serial.print("off");
+            // led->off();
+        // }
+
+        frame+=direction;
+
+        if (frame > 60 || frame == 0) {
+            direction = direction * -1;
+        }
+    }
 }

@@ -1,9 +1,9 @@
 #ifndef ANIMATION_H
 #define ANIMATION_H
 
-#include <string>
 #include <Adafruit_NeoPixel.h>
 #include <FirebaseESP8266.h>
+#include <string>
 
 class Animation {
 public:

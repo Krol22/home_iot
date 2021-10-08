@@ -17,7 +17,6 @@ uint32_t getCorrectColor(
   int blue,
   int white
 ) {
-  Serial.println(white);
 #ifdef GRBW
   return strip->Color(red, green, blue, white);
 #else
@@ -85,6 +84,10 @@ void Static::loadData(FirebaseJson* data) {
 
   data->get(result, "animation/brightness");
   brightness = result.to<int>();
+
+  if (brightness > 100) {
+    brightness = 100;
+  }
 
   data->get(result, "animation/color/r");
   red = result.to<int>();
