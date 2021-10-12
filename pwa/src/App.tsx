@@ -1,13 +1,13 @@
 import { Provider } from 'react-redux';
 
-import Rooms from './features/device/components/Rooms.container';
-
 import store from './store';
+
+import Routes from './Routes';
 
 function App() {
   return (
     <Provider store={store}>
-      <Rooms />
+      <Routes />
     </Provider>
   );
 }

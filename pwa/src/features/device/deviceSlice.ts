@@ -1,6 +1,7 @@
 import { createSlice, createAsyncThunk, PayloadAction } from '@reduxjs/toolkit';
 import { ref, get, update } from 'firebase/database';
 
+import { AppState } from '../../store';
 import { database } from '../../firebase';
 import { Room, Device } from '../../types';
 
@@ -11,7 +12,7 @@ export type DeviceSliceType = {
 };
 
 const initialState: DeviceSliceType = {
-  isLoading: false,
+  isLoading: true,
   rooms: [],
   devices: [],
 };
@@ -84,4 +85,32 @@ export const toggleDevice = createAsyncThunk<void, { deviceName: string, value: 
 
     dispatch(setDeviceOn({ deviceName, value }));
   }
+)
+
+export const toggleRoom = createAsyncThunk<
+  void,
+  { roomName: string, value: boolean },
+  { state: AppState }
+  >(
+  'device/toggleRoom',
+  async ({ roomName, value }, { dispatch, getState }) => {
+    const updates: Record<string, boolean> = {}; 
+
+    const state = getState();
+    const room = state.device.rooms.find(({ name }) => roomName === name);
+
+    if (!room) {
+      return;
+    }
+
+    room.devices.forEach((deviceName) => {
+      updates[`/devices/${deviceName}/on`] = value;
+    });
+
+    await update(ref(database), updates);
+
+    room.devices.forEach((deviceName) => {
+      dispatch(setDeviceOn({ deviceName, value }));
+    });
+  },
 )
