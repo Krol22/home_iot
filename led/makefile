@@ -6,3 +6,6 @@ monitor:
 
 living_room_cabinet:
 	pio run -e living_room_cabinet -t upload
+
+plants:
+	pio run -e plants -t upload

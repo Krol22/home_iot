@@ -65,10 +65,8 @@ void loop() {
         Firebase.getInt(fbdo, device_name, &on);
 
         if (on) {
-            Serial.print("on");
             led->update(0);
         } else {
-            Serial.print("off");
             led->off();
         }
     }

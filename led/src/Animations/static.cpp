@@ -17,7 +17,6 @@ uint32_t getCorrectColor(
   int blue,
   int white
 ) {
-  Serial.println(white);
 #ifdef GRBW
   return strip->Color(red, green, blue, white);
 #else
