@@ -29,7 +29,7 @@ export default function Rooms({
 
   return (
     <div>
-      {rooms.map(room => <Room key={room.name} allDevices={devices} {...room} />)}
+      {rooms.map(room => <Room key={room.name} {...room} />)}
     </div>
   )
 }
